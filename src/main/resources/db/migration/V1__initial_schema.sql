@@ -50,9 +50,9 @@ create table seat
 (
     id         bigint generated always as identity primary key,
     name       text        not null,
-    type       varchar(32) not null check (type in ('REGULAR', 'VIP')),
-
     section_id bigint      not null references section (id) on DELETE CASCADE,
+
+    type       varchar(32) not null check (type in ('REGULAR', 'VIP')),
     status     varchar(32) not null check (status in ('AVAILABLE', 'RESERVED', 'BOOKED')),
 
 
