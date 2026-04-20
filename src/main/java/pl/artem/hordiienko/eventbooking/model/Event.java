@@ -2,6 +2,7 @@ package pl.artem.hordiienko.eventbooking.model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,10 +24,10 @@ public class Event {
     private long id;
 
 
-    @Column(nullable = false)
+    @NotNull
     private String name;
 
-    @Column(nullable = false)
+    @NotNull
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -34,13 +35,13 @@ public class Event {
     private User organiser;
 
 
-    @Column(nullable = false)
+    @NotNull
     private String country;
 
-    @Column(nullable = false)
+    @NotNull
     private String city;
 
-    @Column(nullable = false)
+    @NotNull
     private String address;
 
     @CreatedDate

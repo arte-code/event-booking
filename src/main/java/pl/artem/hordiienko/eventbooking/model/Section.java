@@ -2,6 +2,7 @@ package pl.artem.hordiienko.eventbooking.model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,13 +24,13 @@ public class Section {
     private long id;
 
 
-    @Column(nullable = false)
+    @NotNull
     private String name;
 
-    @Column(nullable = false)
+    @NotNull
     private String description;
 
-    @Column(nullable = false)
+    @NotNull
     private short seatsCount;
 
     @ManyToOne(fetch = FetchType.LAZY)
